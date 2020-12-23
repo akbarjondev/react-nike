@@ -21,9 +21,9 @@ export default function Header() {
 	return (
 		<>
 			<div className="header">
-				<a className="logo header__logo" href="index.html">
-					<img className='logo__img' width='100' height='34' src={logo} srcset={logoBig} alt="Nike logo" />
-				</a>
+				<NavLink className='logo header__logo' to='/'>
+					<img className='logo__img' width='100' height='34' src={logo} srcSet={logoBig} alt="Nike logo" />
+				</NavLink>
 
 				<ul className="links header__links un-list">
 					<li className="links__item">
@@ -43,33 +43,35 @@ export default function Header() {
 				<ul className="socials header__socials un-list">
 					<li className="socials__item">
 						<a className="social" href="#">
-							<img src={logoFacebook} srcse={logoFacebookBig} alt="Facebook icon" width='30' height='30' />
+							<img src={logoFacebook} srcSet={`${logoFacebookBig} 2x`} alt="Facebook icon" width='30' height='30' />
 						</a>
 					</li>
 					<li className="socials__item">
 						<a className="social" href="#">
-							<img src={logoInstagram} srcse={logoInstagramBig} alt="Instagram icon" width='30' height='30' />
+							<img src={logoInstagram} srcSet={`${logoInstagramBig} 2x`} alt="Instagram icon" width='30' height='30' />
 						</a>
 					</li>
 					<li className="socials__item">
 						<a className="social" href="#">
-							<img src={logoYoutube} srcse={logoYoutubeBig} alt="Youtube icon" width='30' height='30' />
+							<img src={logoYoutube} srcSet={`${logoYoutubeBig} 2x`} alt="Youtube icon" width='30' height='30' />
 						</a>
 					</li>
 				</ul>
 			</div> {/* end of header */}
 
-			<Switch>
-				
-				<Route path='/' component={Home} exact />
+			<div className="container">
+				<Switch>
+					
+					<Route path='/' component={Home} exact />
 
-				<Route path='/boys' component={Boys} exact />
-				
-				<Route path='/girls' component={Girls} exact />
+					<Route path='/boys' component={Boys} exact />
+					
+					<Route path='/girls' component={Girls} exact />
 
-				<Route path='/customize' component={Customize} exact />
+					<Route path='/customize' component={Customize} exact />
 
-			</Switch>
+				</Switch>
+			</div>
 		</>
 	);
 }
