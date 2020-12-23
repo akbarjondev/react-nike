@@ -1,0 +1,42 @@
+.home {
+	display: flex;
+}
+
+.home__heading {
+	max-width: 420px;
+	margin-top: 80px;
+	font-size: 60px;
+	line-height: 82px;
+	font-weight: 800;
+	color: #6d83f2;
+	text-transform: capitalize;
+}
+
+.tamato-text {
+	color: #f26d6d;
+}
+
+.home__left {
+	display: flex;
+	position: relative;
+	z-index: 10;
+}
+
+.home__left::after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: -27px;
+	left: 90px;
+	width: 650px;
+	height: 650px;
+	background-color: rgba(248, 237, 139, 0.63);
+	border-radius: 50%;
+}
+
+.home__img {
+	position: absolute;
+	z-index: 15;
+	top: -78px;
+	width: 718px;
+}
