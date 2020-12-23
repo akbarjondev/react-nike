@@ -1,9 +1,14 @@
+import { Switch, NavLink, Route } from 'react-router-dom';
+import Header from './Components/Header/Header'
+
 import './App.css';
 
 function App() {
   return (
     <>
-      App
+    	<div className="main">
+    		<Header />
+    	</div>	
     </>
   );
 }
