@@ -1,0 +1,29 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 24px 29px;
+}
+
+.links__link {
+	padding: 10px 22px;
+	font-size: 20px;
+	line-height: 27px;
+	color: #6d83f2;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.links__link:hover {
+	color: #ffffff;
+	background-color: #6d83f2;
+}
+
+.links__link--active {
+	color: #ffffff;
+	background-color: #6d83f2;
+}
+
+.social {
+	padding: 0 14px;
+}
