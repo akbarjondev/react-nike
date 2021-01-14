@@ -1,4 +1,4 @@
-import { NavLink, Route, Switch } from 'react-router-dom'
+import { NavLink, Route, Switch, useHistory } from 'react-router-dom'
 import Home from '../../Pages/Home/Home'
 import Boys from '../../Pages/Boys/Boys'
 import Girls from '../../Pages/Girls/Girls'
@@ -18,6 +18,11 @@ import logoYoutube from './../../Image/youtube.png'
 import logoYoutubeBig from './../../Image/youtube@2x.png'
 
 export default function Header() {
+
+	const history = useHistory()
+
+	console.log(history)
+
 	return (
 		<>
 			<div className="header">
@@ -27,16 +32,16 @@ export default function Header() {
 
 				<ul className="links header__links un-list">
 					<li className="links__item">
-						<NavLink className='links__link' activeClassName="links__link--active" to='/'>Home</NavLink>
+						<NavLink className='links__link' onClick={() => history.push('/home')} activeClassName="links__link--active" to='/home'>Home</NavLink>
 					</li>
 					<li className="links__item">
-						<NavLink className='links__link' activeClassName="links__link--active" to='/boys'>Boys</NavLink>
+						<NavLink className='links__link' onClick={() => history.push('/boys')} activeClassName="links__link--active" to='/boys'>Boys</NavLink>
 					</li>
 					<li className="links__item">
-						<NavLink className='links__link' activeClassName="links__link--active" to='/girls'>Girls</NavLink>
+						<NavLink className='links__link' onClick={() => history.push('/girls')} activeClassName="links__link--active" to='/girls'>Girls</NavLink>
 					</li>
 					<li className="links__item">
-						<NavLink className='links__link' activeClassName="links__link--active" to='/customize'>customize</NavLink>
+						<NavLink className='links__link' onClick={() => history.push('/customize')} activeClassName="links__link--active" to='/customize'>customize</NavLink>
 					</li>
 				</ul>
 
@@ -59,19 +64,7 @@ export default function Header() {
 				</ul>
 			</div> {/* end of header */}
 
-			<div className="container">
-				<Switch>
-					
-					<Route path='/' component={Home} exact />
-
-					<Route path='/boys' component={Boys} exact />
-					
-					<Route path='/girls' component={Girls} exact />
-
-					<Route path='/customize' component={Customize} exact />
-
-				</Switch>
-			</div>
+			
 		</>
 	);
 }
